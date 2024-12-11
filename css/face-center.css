@@ -1,0 +1,276 @@
+/***************************** HERO */
+.hero {
+    margin: 0 auto;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero__info {
+    padding: 0.2rem;
+    border-radius: 3%;
+    border-bottom: var(--white) 2px solid;
+    text-align: center;
+}
+.hero__info, .hero__img {
+    width: 25%;
+}
+.hero__info--main {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    text-align: center;
+    padding: 0.2rem;
+    color: var(--white);
+}
+.hero__img {
+    margin-left: auto;
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    border: var(--white) 2.5px solid;
+    background-image: url(../imgs/LautaroCabralVector.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.hero__info--name {
+    margin-top: 0.5rem;
+}
+.hero__info--title h5{
+    margin-bottom: 0.5rem;
+}
+.social-icon-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 0.5rem;
+}
+.social-icon {
+    width: 1.5rem;
+    height: auto;
+    display: block;
+}
+
+.hero__info p {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+
+/***************************** NAVIGATION */
+.navigation {
+    padding: 0.5rem;
+    height: 60%;
+    max-height: 60%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    perspective-origin: center;
+}
+
+.column {
+    width: 25%;
+    height: 100%;
+    color: var(--white);
+    /*box-shadow: inset 0px 0px 37px -3px var(--black-s-transparent);*/
+    border-radius: 0px;    
+    position: relative;
+    will-change: transform;
+    transform-style: preserve-3d;
+    transform: rotate3d(0,1,0, 35deg) translate3d(0, 0, -100px);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in;
+}
+.column.column__left {
+    transform: rotate3d(0,1,0, 35deg) translate3d(0, 0, -100px);
+}
+.column.column__center {
+    width: 30%;
+    height: 75%;
+    transform: translate3d(0, 30px, -200px);
+}
+.column.column__right {
+    transform: rotate3d(0,1,0, -35deg) translate3d(0, 0, -100px);
+}
+.column.column__bottom {
+    margin-top: 4rem;
+    height: 20%;
+    width: 30%;
+    transform: translate3d(0, -150px, -200px);
+}
+
+.column__right:hover {
+    transform: rotate3d(0,1,0, -35deg) translate3d(0, 0, -35px);
+}
+.column__left:hover {
+    transform: rotate3d(0,1,0, 35deg) translate3d(0, 0, -35px);
+}
+.column__center:hover {
+    transform: translate3d(0, 0, -135px);
+}
+.column__bottom:hover {
+    transform: translate3d(0, -150px, -135px);
+}
+
+.effect-selector {
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0px -82px 86px -28px var(--gray-s-transparent); /* Gray again for color blending */
+    z-index: 1;
+    position: absolute;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+.effect-selector:hover {
+    opacity: 1;
+}
+
+.area {
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.area__img {
+    margin: 0;
+    margin-bottom: 2em;
+    opacity: 1;
+    width: 14em;
+    height: 14em;
+    background-color: var(--white);
+    background-size: 65%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%;
+}
+.area__title {
+    font-size: 3em;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+.area__img {
+    opacity: 0.9;
+}
+.area__img.frontend {
+    background-image: url('../imgs/ico-frontend.svg');
+}
+.area__img.backend {
+    background-image: url('../imgs/ico-backend.svg');
+}
+.area__img.dev {
+    background-image: url('../imgs/ico-joystick.svg');
+}
+
+@media screen
+and (max-width: 1366px) {
+
+    /*
+    .hero {
+        margin-top: 0;
+    }
+        */
+    .column.column__bottom {
+        margin-top: 9.5rem;
+    }
+
+    .column {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen
+and (max-width: 500px) {
+    .area {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        height: 100%;
+    }
+    .area h1 {
+        display: inline-block;
+        width: 50%;
+    }
+    .area__img {
+        width: 5rem;
+        height: 5rem;
+        margin-bottom: 0;
+    }
+    .hero {
+        margin: 2rem 0;
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+    .hero__info--main {
+        order: 1;
+    }
+    .hero__info {
+        order: 2;
+    }
+    .hero__info, .hero__img {
+        width: 100%;
+    }
+    .hero__img {
+        margin: 0;
+    }
+    
+    .navigation {
+        display: flex;
+        flex-direction: row;
+        row-gap: 3rem;
+        margin: 1rem 0;
+    }
+
+    .column {
+        font-size: 0.7rem;
+        position: static;
+        will-change: auto;
+        transform-style: flat;
+        transform: none;
+        width: 100%;
+    }
+
+    .column.column__left,
+    .column.column__right,
+    .column.column__center
+    {
+        width: 100%;
+        transform: none;
+        padding: 1rem 0;   
+        height: 20%;
+    }
+
+    .column.column__center {
+        order: -1;
+    }
+    
+    .column.column__bottom {
+        height: 20%;
+        margin: 0;
+        width: 100%;
+        transform: none;
+        padding: 1rem 0;
+    }
+
+    .column__right:hover {
+        transform: none;
+    }
+    .column__left:hover {
+        transform: none;
+    }
+    .column__center:hover {
+        transform: none;
+    }
+    .column__bottom:hover {
+        transform: none;
+    }
+}

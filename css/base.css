@@ -1,0 +1,110 @@
+:root {
+    --font-size: 10px;
+    --size-face: 100%;
+    --gray: #c8dad3;
+    --white: #f2f6f5;
+    --blue-dark: #00025d;
+    --black-s-transparent: rgba(0,0,0,0.35);
+    --gray-s-transparent: #93b5b383;
+    --gray-light-s-transparent: #b6b6b663;
+}
+
+@font-face {
+    font-family: "Mona Sans";
+    src: url("fonts/Mona-Sans.woff2") format("woff2 supports variations"),
+      url("fonts/Mona-Sans.woff2") format("woff2-variations");
+    font-display: swap;
+    font-weight: 200 900;
+    font-stretch: 75% 125%;
+}
+
+html {
+    font-family: "Mona Sans", sans-serif;
+    box-sizing: border-box;
+}
+body, h1, h2, h3, h4, h5, div, figure {
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: var(--white);;
+    text-shadow: none;
+}
+section {
+    font-size: 1.1rem;
+}
+
+.s_transparent_box {
+    box-shadow: inset 0px -86px 86px -28px var(--gray-light-s-transparent);
+}
+.blur {
+    /* TODO: I am not sure if finally I will apply this */
+    backdrop-filter: blur(5px);
+}
+
+.flex_container_x {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.flex_container_y {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.articles_container_A {
+    height: 100%;
+    width: 40%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1.5rem;
+}
+.articles_container_A article {
+    font-weight: 600;
+    text-align: left;
+    width: 80%;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+.articles_container_A h1 {
+    font-size: 2rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.3rem;
+}
+.articles_container_A h2 {
+    margin-bottom: 0.3rem;
+}
+.articles_container_A a {
+    color: #273b47;
+}
+
+.item-description {
+    box-sizing: border-box;
+    
+    width: 63%;
+}
+.item-description h2 {
+
+}
+.item-description a {
+    color: var(--white);
+}
+
+
+@media screen
+and (max-width: 1366px) {
+    html {
+        font-size: 10.5px;
+    }
+}

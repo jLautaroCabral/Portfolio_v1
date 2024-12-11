@@ -1,0 +1,89 @@
+.btn-downToCenter {
+    grid-area: b;
+    opacity: 0.6;
+    transition-duration: 1s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+}
+.btn-downToCenter h2 {
+    margin-bottom: 1em;
+}
+.btn-downToCenter:hover {
+    opacity: 1;
+}
+#downToCenterButton {
+    order: -1;
+    width: 100%;
+    height: 10%;
+    flex-direction: row;
+}
+
+.upArrow {
+    background-image: url('../imgs/left-and-right-arrows.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    margin-top: 0.5em;
+    transform: rotate(-90deg);
+} 
+
+.w10 {
+    width: 10rem;
+}
+
+.w15 {
+    width: 15rem;
+}
+
+.art_container {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    column-gap: 0.3rem;
+    align-items: center;
+}
+
+.art_container figure {
+    margin: 0;
+}
+
+.art_container img {
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    border-radius: 2rem;
+}
+
+
+@media screen
+and (max-width: 500px) {
+    
+    #extra_container {
+        flex-direction: column;
+        overflow: auto;
+        gap: 2rem;
+    }
+    #extra_container section {
+        width: 100%;
+        box-sizing: content-box;
+        height: auto;
+    }
+    .articles_container_A {
+        gap: 2rem;
+    }
+    
+    /*
+    #downToCenterButton {
+        order: -1;
+        width: 100%;
+        height: 10%;
+        flex-direction: row;
+    }*/
+}

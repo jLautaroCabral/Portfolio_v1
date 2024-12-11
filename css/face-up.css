@@ -1,0 +1,138 @@
+.grid-container--faceup {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    padding: 2em;
+    grid-template: 10% 1fr / 1fr 1fr;
+    grid-template-areas: "b b"
+                         "c j";
+    box-sizing: border-box;
+}
+
+
+#upToCenterButton {
+    width: 100%;
+    height: 10%;
+    flex-direction: row;
+}
+
+#gamedev_container {
+    height: 87%;
+}
+
+#experience_section {
+    width: 60%;
+    height: 100%;
+}
+
+#knowledge {
+    box-sizing: content-box;
+    gap: 1rem;
+}
+
+.experience_container {
+    height: 100%;
+    display: grid;
+    grid-template: repeat(5, auto) / 1fr 4fr 1fr;
+    grid-gap: 0.8rem;
+}
+.experience {
+    display: flex;
+}
+.experience--left {
+    grid-column: 1 / 3;
+}
+.experience--right {
+    grid-column: 2 / 4;
+}
+
+.experience__img-container {
+    background-color: #FEFEFE;
+    width: 12.5rem;
+    height: 12.5rem;
+    overflow: hidden;
+}
+.experience__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.experience__info {
+    padding: 1rem;
+    width: 70%;
+}
+
+.btn-upToCenter {
+    opacity: 0.6;
+    transition-duration: 1s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    height: 10%;
+}
+
+
+.btn-upToCenter h2 {
+    margin-top: 1em;
+}
+
+.downArrow {
+    width: 3rem;
+    height: 3rem;
+    margin-top: 0.5em;
+    transform: rotate(90deg);
+}
+
+.btn-upToCenter:hover {
+    opacity: 1;
+}
+
+@media screen
+and (max-width: 500px) {
+    #gamedev_container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    #experience_section {
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        box-sizing: content-box;
+        overflow: visible;
+    }
+    #experience_container {
+        width: 100%;
+    }
+
+    #experience_section section {
+        width: 100%;
+        height: auto;
+    }
+    .experience--left {
+        grid-column: 1 / 4;
+    }
+    .experience--right {
+        grid-column: 1 / 4;
+    }
+    #knowledge {
+        order: -1;
+        width: 100%;
+        height: auto;
+        box-sizing: content-box;
+        overflow: visible;
+        gap: 2rem;
+    }
+
+    #knowledge article {
+        width: 100%;
+        height: auto;
+        box-sizing: border-box;
+        padding: 2rem;
+    }
+}

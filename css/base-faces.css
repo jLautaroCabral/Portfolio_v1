@@ -1,0 +1,121 @@
+/* To store styles related with views/faces */
+.view {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.face {
+    width: var(--size-face);
+    height: var(--size-face);
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+#faceMain {
+    position: relative;
+    will-change: transform;
+    width: var(--size-face);
+    height: var(--size-face);
+    margin: 0;
+    padding: 0;
+}
+.face.up {
+    top: calc(-100%);
+}
+.face.down {
+    bottom: calc(-100%);
+}
+.face.left {
+    left: calc(-100%);
+}
+.face.right {
+    right: calc(-100%);
+}
+
+.face_body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    color: var(--white);
+    font-size: 16px;
+    box-sizing: border-box;
+
+    padding-top: calc(env(safe-area-inset-top, 0) + 1rem);
+    padding-bottom: calc(env(safe-area-inset-bottom, 0) + 1rem);
+    
+}
+.face_content {
+    padding-left: calc(env(safe-area-inset-left, 0) + 1.5rem);
+    padding-right: calc(env(safe-area-inset-right, 0) + 1.5rem);
+}
+
+#background_video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -10;
+    transform: scale(3);
+}
+
+.back_button {
+    cursor: pointer;
+    width: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    transition-duration: 1s;
+    font-size: 0.8rem;
+}
+.back_button h2 {
+    margin: 0 0.4rem;
+}
+
+.x_arrow {
+    width: 3rem;
+    height: 3rem;
+}
+
+.sx_inverse {
+    transform: scaleX(-1);
+}
+
+.sy_inverse {
+    transform: scaleY(-1);
+}
+
+@media screen
+and (max-width: 500px) {
+    .face_body {
+        padding-bottom: 8rem;
+    }
+    #background_video {
+        position: absolute;
+        height: 100vh;
+        width: auto;
+        object-fit: cover;
+        z-index: -10;
+        transform: scale(3);
+    }
+}
